@@ -1,0 +1,21 @@
+<div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="card p-3 rounded-4" style="width: 500px">
+        <div class="card-body">
+            <h1 class="display-1 text-center"><strong>ARTICLES</strong></h1>
+            <ul class="list-group">
+                <% @articles.each do |article| %>
+                <li class="list-group-item">
+                    <a href="<%= article_path(article) %>">
+                    <%= link_to article.title, article%>
+                    </a>
+                </li>
+                <% end %>
+            </ul>
+            <div class="text-center">
+                <a href="/articles/new" class="btn btn-primary mt-3">
+                NEW
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
